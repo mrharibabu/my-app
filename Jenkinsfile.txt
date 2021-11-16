@@ -1,0 +1,23 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Example Clone') {
+            steps {
+               
+                bat "mvn clean"
+            }
+        }
+        stage('Example Test') {
+            
+            steps {
+                bat "mvn test"
+            }
+        }
+        stage('Example Deploy') {
+            
+            steps {
+                bat "mvn package"
+            }
+        }
+    }
+}
